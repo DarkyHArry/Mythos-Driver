@@ -6,16 +6,12 @@ on:
   pull_request:
 
 jobs:
-  build-driver:
-    runs-on: windows-latest
+  note:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Configure
-        run: cmake -S AntiCheatDriver -B build -A x64
-      - name: Build (Release)
-        run: cmake --build build --config Release
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: AntiCheatDriver
-          path: build/Release/AntiCheatDriver.sys
+      - name: WDK required
+        run: |
+          echo "This project requires the Windows Driver Kit (WDK) and Visual Studio C++ workload."
+          echo "GitHub-hosted runners do not include the WDK. Build on a self-hosted Windows runner with WDK installed, or locally."
+          exit 0
