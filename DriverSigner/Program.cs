@@ -21,8 +21,9 @@ namespace DriverSigner
             var outputOption = new Option<FileInfo>("--output", "Output path for signed driver") { IsRequired = false };
             var testsignOption = new Option<bool>("--testsign", "Enable test signing mode (for development)") { IsRequired = false };
             var verifyOption = new Option<bool>("--verify", "Verify signature after signing") { IsRequired = false };
-            var timestampOption = new Option<string>("--timestamp", "Timestamp server URL") { IsRequired = false };
-            var sha256Option = new Option<bool>("--sha256", "Use SHA256 for signing (default: true)") { IsRequired = false };
+            var timestampOption = new Option<string?>("--timestamp", "Timestamp server URL (default: http://timestamp.digicert.com)") { IsRequired = false, Arity = ArgumentArity.ZeroOrOne };
+            var sha256Option = new Option<bool>("--sha256", "Use SHA256 for signing (default: true; pass --sha256 false for SHA1)") { IsRequired = false, Arity = ArgumentArity.ZeroOrOne };
+            sha256Option.SetDefaultValue(true);
             var verboseOption = new Option<bool>("--verbose", "Verbose output") { IsRequired = false };
 
             var rootCommand = new RootCommand("DriverSigner - Sign PE files (.exe, .sys, .dll, etc.) for Windows")
@@ -43,7 +44,7 @@ namespace DriverSigner
                 var sha256 = context.ParseResult.GetValueForOption(sha256Option);
                 var verbose = context.ParseResult.GetValueForOption(verboseOption);
 
-                var exitCode = await SignDriver(file, cert, password, output, testsign, verify, timestamp, sha256, verbose);
+                var exitCode = await SignDriver(file!, cert!, password!, output, testsign, verify, timestamp, sha256, verbose);
                 context.ExitCode = exitCode;
             });
 
@@ -231,7 +232,7 @@ namespace DriverSigner
             {
                 File.WriteAllBytes(tempInput, data);
 
-                string signToolPath = FindSignTool();
+                string? signToolPath = FindSignTool();
                 if (string.IsNullOrEmpty(signToolPath))
                 {
                     LogError("signtool.exe not found. Install Windows SDK or Visual Studio with Windows SDK.");
@@ -247,7 +248,7 @@ namespace DriverSigner
                 string hashAlg = sha256 ? "sha256" : "sha1";
                 string timestampArg = !string.IsNullOrEmpty(timestampUrl)
                     ? $"/tr \"{timestampUrl}\" /td {hashAlg}"
-                    : "/tr \"http://timestamp.digicert.com\" /td sha256";
+                    : $"/tr \"http://timestamp.digicert.com\" /td {hashAlg}";
 
                 string arguments = $"sign /v /sha1 {certThumbprint} /fd {hashAlg} {timestampArg} /d \"Ring 0 Driver\" /du \"https://morlsara.io\" \"{tempInput}\"";
 
@@ -305,36 +306,42 @@ namespace DriverSigner
 
         static string? FindSignTool()
         {
-            string[] possiblePaths = new[]
-            {
-                @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe",
-                @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\signtool.exe",
-                @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\signtool.exe",
-                @"C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe",
-                @"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\signtool.exe",
-                @"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\signtool.exe",
-                @"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\signtool.exe",
-            };
+            List<string> binRoots = new List<string>();
 
-            foreach (string path in possiblePaths)
+            string? kitsRoot = Environment.GetEnvironmentVariable("WindowsSdkDir");
+            if (!string.IsNullOrEmpty(kitsRoot))
             {
-                if (File.Exists(path))
-                    return path;
+                binRoots.Add(Path.Combine(kitsRoot, "bin"));
             }
 
-            string? windowsKitsRoot = Environment.GetEnvironmentVariable("WindowsSdkDir")
-                ?? Environment.GetEnvironmentVariable("WindowsKitRoot");
+            binRoots.Add(@"C:\Program Files (x86)\Windows Kits\10\bin");
+            binRoots.Add(@"C:\Program Files\Windows Kits\10\bin");
 
-            if (!string.IsNullOrEmpty(windowsKitsRoot))
+            foreach (string binRoot in binRoots)
             {
-                string[] searchPaths = Directory.GetFiles(windowsKitsRoot, "signtool.exe", SearchOption.AllDirectories);
-                foreach (string path in searchPaths)
+                if (!Directory.Exists(binRoot))
+                    continue;
+
+                // Prefer the newest SDK version; signtool flags change between SDK releases.
+                IEnumerable<string> versions = Directory.GetDirectories(binRoot)
+                    .Select(Path.GetFileName)
+                    .OfType<string>()
+                    .Where(name => Version.TryParse(name, out _))
+                    .OrderByDescending(name => Version.Parse(name));
+
+                foreach (string version in versions)
                 {
-                    if (path.Contains("x64"))
-                        return path;
+                    foreach (string arch in new[] { "x64", "x86", "arm64" })
+                    {
+                        string candidate = Path.Combine(binRoot, version, arch, "signtool.exe");
+                        if (File.Exists(candidate))
+                            return candidate;
+                    }
                 }
-                if (searchPaths.Length > 0)
-                    return searchPaths[0];
+
+                string flat = Path.Combine(binRoot, "x64", "signtool.exe");
+                if (File.Exists(flat))
+                    return flat;
             }
 
             return null;
@@ -342,7 +349,7 @@ namespace DriverSigner
 
         static bool VerifySignature(string filePath, bool verbose)
         {
-            string signToolPath = FindSignTool();
+            string? signToolPath = FindSignTool();
             if (string.IsNullOrEmpty(signToolPath))
             {
                 LogError("signtool.exe not found for verification");
@@ -374,7 +381,8 @@ namespace DriverSigner
                 if (!string.IsNullOrEmpty(stderr)) Log(stderr);
             }
 
-            return process.ExitCode == 0 && stdout.Contains("Successfully verified");
+            // signtool output is localized; the exit code is the only reliable signal.
+            return process.ExitCode == 0;
         }
 
         static string ComputeHash(byte[] data, HashAlgorithmName algorithm)

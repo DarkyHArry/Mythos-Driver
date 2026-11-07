@@ -28,6 +28,11 @@
 #define IOCTL_AC_QUERY_INTEGRITY CTL_CODE(IOCTL_AC_BASE, 0x803, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_AC_GET_VIOLATIONS CTL_CODE(IOCTL_AC_BASE, 0x804, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_AC_SET_CONFIG CTL_CODE(IOCTL_AC_BASE, 0x805, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_AC_GET_ADVANCED_STATE CTL_CODE(IOCTL_AC_BASE, 0x806, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_AC_GET_HYPERVISOR_INFO CTL_CODE(IOCTL_AC_BASE, 0x807, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_AC_GET_VTL_INFO CTL_CODE(IOCTL_AC_BASE, 0x808, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_AC_GET_HVCI_INFO CTL_CODE(IOCTL_AC_BASE, 0x809, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_AC_GET_RING_INFO CTL_CODE(IOCTL_AC_BASE, 0x80A, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 // Maximum tracked processes
 #define MAX_TRACKED_PROCESSES 1024
@@ -46,7 +51,22 @@ typedef enum _AC_VIOLATION_TYPE {
     AC_VIOLATION_API_HOOK = 7,
     AC_VIOLATION_CODE_INJECTION = 8,
     AC_VIOLATION_UNKNOWN_MODULE = 9,
-    AC_VIOLATION_INTEGRITY_CHECK = 10
+    AC_VIOLATION_INTEGRITY_CHECK = 10,
+    // Advanced violation types for Ring -1/-2/-3, VTL, HVCI
+    AC_VIOLATION_HYPERVISOR_DETECTED = 11,
+    AC_VIOLATION_VMX_ROOT_MODE = 12,
+    AC_VIOLATION_SVM_NESTED = 13,
+    AC_VIOLATION_SMM_INTRUSION = 14,
+    AC_VIOLATION_SMRAM_CORRUPTION = 15,
+    AC_VIOLATION_ME_COMPROMISED = 16,
+    AC_VIOLATION_PSP_COMPROMISED = 17,
+    AC_VIOLATION_HECI_ANOMALY = 18,
+    AC_VIOLATION_VTL_ESCAPE = 19,
+    AC_VIOLATION_SECURE_KERNEL_TAMPER = 20,
+    AC_VIOLATION_HVCI_VIOLATION = 21,
+    AC_VIOLATION_KERNEL_CET_FAILURE = 22,
+    AC_VIOLATION_PAGE_TABLE_ANOMALY = 23,
+    AC_VIOLATION_VTL1_INTEGRITY = 24
 } AC_VIOLATION_TYPE;
 
 // Process tracking structure
@@ -232,6 +252,43 @@ VOID AcScanTimerCallback(
 ULONG64 AcCalculateModuleHash(PVOID BaseAddress, ULONG Size);
 BOOLEAN AcIsSuspiciousModule(PCWSTR ModuleName);
 BOOLEAN AcIsGameProcess(PCWSTR ImageName);
+
+/* =========================================================================
+ * Advanced detection (Ring -1 / Ring -2 / VTL / HVCI / CET / page tables)
+ *   IOCTL_AC_GET_ADVANCED_STATE - full AC_ADVANCED_STATE snapshot
+ *   IOCTL_AC_GET_HYPERVISOR_INFO - hypervisor presence + VMX/SVM state
+ *   IOCTL_AC_GET_VTL_INFO       - VTL escape / secure kernel tamper
+ *   IOCTL_AC_GET_HVCI_INFO      - HVCI policy / kernel CET / page tables
+ *   IOCTL_AC_GET_RING_INFO      - SMM / ME / PSP / microcode / HECI
+ * ========================================================================= */
+NTSTATUS AcInitializeAdvancedDetection(VOID);
+VOID AcCleanupAdvancedDetection(VOID);
+NTSTATUS AcRunAdvancedDetection(VOID);
+NTSTATUS AcQueryAdvancedState(
+    _Out_writes_bytes_(OutputBufferLength) PVOID OutputBuffer,
+    _In_ ULONG OutputBufferLength,
+    _Out_ PULONG_PTR BytesReturned
+);
+NTSTATUS AcGetHypervisorInfo(
+    _Out_writes_bytes_(OutputBufferLength) PVOID OutputBuffer,
+    _In_ ULONG OutputBufferLength,
+    _Out_ PULONG_PTR BytesReturned
+);
+NTSTATUS AcGetVtlInfo(
+    _Out_writes_bytes_(OutputBufferLength) PVOID OutputBuffer,
+    _In_ ULONG OutputBufferLength,
+    _Out_ PULONG_PTR BytesReturned
+);
+NTSTATUS AcGetHvciInfo(
+    _Out_writes_bytes_(OutputBufferLength) PVOID OutputBuffer,
+    _In_ ULONG OutputBufferLength,
+    _Out_ PULONG_PTR BytesReturned
+);
+NTSTATUS AcGetRingInfo(
+    _Out_writes_bytes_(OutputBufferLength) PVOID OutputBuffer,
+    _In_ ULONG OutputBufferLength,
+    _Out_ PULONG_PTR BytesReturned
+);
 
 // External function declarations
 NTSYSAPI NTSTATUS NTAPI ZwQuerySystemInformation(

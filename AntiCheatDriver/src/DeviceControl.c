@@ -139,6 +139,51 @@ static NTSTATUS AcHandleIoctl(
             break;
         }
 
+        case IOCTL_AC_GET_ADVANCED_STATE: {
+            if (!OutputBuffer) {
+                status = STATUS_INVALID_PARAMETER;
+                break;
+            }
+            status = AcQueryAdvancedState(OutputBuffer, OutputLength, Information);
+            break;
+        }
+
+        case IOCTL_AC_GET_HYPERVISOR_INFO: {
+            if (!OutputBuffer) {
+                status = STATUS_INVALID_PARAMETER;
+                break;
+            }
+            status = AcGetHypervisorInfo(OutputBuffer, OutputLength, Information);
+            break;
+        }
+
+        case IOCTL_AC_GET_VTL_INFO: {
+            if (!OutputBuffer) {
+                status = STATUS_INVALID_PARAMETER;
+                break;
+            }
+            status = AcGetVtlInfo(OutputBuffer, OutputLength, Information);
+            break;
+        }
+
+        case IOCTL_AC_GET_HVCI_INFO: {
+            if (!OutputBuffer) {
+                status = STATUS_INVALID_PARAMETER;
+                break;
+            }
+            status = AcGetHvciInfo(OutputBuffer, OutputLength, Information);
+            break;
+        }
+
+        case IOCTL_AC_GET_RING_INFO: {
+            if (!OutputBuffer) {
+                status = STATUS_INVALID_PARAMETER;
+                break;
+            }
+            status = AcGetRingInfo(OutputBuffer, OutputLength, Information);
+            break;
+        }
+
         default:
             status = STATUS_INVALID_DEVICE_REQUEST;
             break;

@@ -47,6 +47,12 @@ NTSTATUS DriverEntry(
     context->Config.ScanIntervalMs = 5000;
     context->Config.MaxViolations = MAX_VIOLATIONS;
 
+    status = AcInitializeAdvancedDetection();
+    if (!NT_SUCCESS(status)) {
+        KdPrint(("[AntiCheatDriver] Failed to initialize advanced detection: 0x%08X\n", status));
+        return status;
+    }
+
     status = AcCreateDevice(context, g_WdfDriver);
     if (!NT_SUCCESS(status)) {
         KdPrint(("[AntiCheatDriver] Failed to create device: 0x%08X\n", status));
@@ -95,6 +101,7 @@ VOID DriverUnload(_In_ WDFDRIVER Driver) {
 
     if (context) {
         AcUnregisterCallbacks(context);
+        AcCleanupAdvancedDetection();
 
         while (!IsListEmpty(&context->TrackedProcessList)) {
             entry = RemoveHeadList(&context->TrackedProcessList);

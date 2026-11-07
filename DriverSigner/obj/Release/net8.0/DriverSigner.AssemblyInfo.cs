@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DriverSigner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07fe3e5267bb3681a632e13c3b95368294884f7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DriverSigner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DriverSigner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

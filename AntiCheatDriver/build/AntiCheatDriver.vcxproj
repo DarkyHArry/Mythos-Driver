@@ -87,7 +87,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /RTC- /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -122,10 +122,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"Debug\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -145,7 +145,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\libcntpr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfldr.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -153,6 +153,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/Debug/AntiCheatDriver.lib</ImportLibrary>
@@ -170,7 +171,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -206,10 +207,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"Release\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -229,7 +230,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\libcntpr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfldr.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -237,6 +238,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
       <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/Release/AntiCheatDriver.lib</ImportLibrary>
@@ -254,7 +256,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -290,10 +292,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"MinSizeRel\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -313,7 +315,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\libcntpr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfldr.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -321,6 +323,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
       <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/MinSizeRel/AntiCheatDriver.lib</ImportLibrary>
@@ -338,7 +341,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -373,10 +376,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"RelWithDebInfo\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.31;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -396,7 +399,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\libcntpr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.31\wdfldr.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -404,6 +407,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/RelWithDebInfo/AntiCheatDriver.lib</ImportLibrary>
@@ -484,6 +488,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DeviceControl.c" />
     <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\MemoryScan.c" />
     <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DriverUtils.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\AdvancedDetection.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

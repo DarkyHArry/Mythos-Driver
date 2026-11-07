@@ -28,3 +28,4 @@ D:\Mythos\Driver\DriverSigner\obj\Release\net8.0\refint\DriverSigner.dll
 D:\Mythos\Driver\DriverSigner\obj\Release\net8.0\DriverSigner.pdb
 D:\Mythos\Driver\DriverSigner\obj\Release\net8.0\DriverSigner.genruntimeconfig.cache
 D:\Mythos\Driver\DriverSigner\obj\Release\net8.0\ref\DriverSigner.dll
+D:\Mythos\Driver\DriverSigner\obj\Release\net8.0\DriverSigner.sourcelink.json

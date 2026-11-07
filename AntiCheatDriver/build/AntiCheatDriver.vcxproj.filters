@@ -22,6 +22,9 @@
     <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DriverUtils.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\AdvancedDetection.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Mythos\Driver\AntiCheatDriver\CMakeLists.txt" />

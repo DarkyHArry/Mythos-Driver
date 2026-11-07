@@ -12,3 +12,4 @@ D:\Mythos\Driver\BasicTest\obj\Debug\net8.0\refint\BasicTest.dll
 D:\Mythos\Driver\BasicTest\obj\Debug\net8.0\BasicTest.pdb
 D:\Mythos\Driver\BasicTest\obj\Debug\net8.0\BasicTest.genruntimeconfig.cache
 D:\Mythos\Driver\BasicTest\obj\Debug\net8.0\ref\BasicTest.dll
+D:\Mythos\Driver\BasicTest\obj\Debug\net8.0\BasicTest.sourcelink.json

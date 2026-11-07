@@ -20,6 +20,12 @@ set(DRIVER_TYPE "KERNEL_MODE")
 
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /RTC-")
 string(REPLACE "/RTC1" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+
+# CMake injects the user-mode CRT import libraries (kernel32, user32, ...) into
+# every link line. A kernel driver must not resolve against user-mode imports,
+# so the defaults are cleared and only WDK kernel libs are linked explicitly.
+set(CMAKE_C_STANDARD_LIBRARIES "" CACHE STRING "" FORCE)
+set(CMAKE_CXX_STANDARD_LIBRARIES "" CACHE STRING "" FORCE)
 set(KERNEL_COMPILE_FLAGS
     /kernel
     /D_AMD64_
@@ -56,6 +62,7 @@ set(KERNEL_LINK_FLAGS
     /SUBSYSTEM:NATIVE,6.01
     /DRIVER:WDM
     /ENTRY:FxDriverEntry
+    /NODEFAULTLIB
     /RELEASE
     /OPT:REF
     /OPT:ICF
@@ -75,20 +82,28 @@ add_library(${TARGET_NAME} SHARED
     src/DeviceControl.c
     src/MemoryScan.c
     src/DriverUtils.c
+    src/AdvancedDetection.c
 )
 
 target_compile_options(${TARGET_NAME} PRIVATE ${KERNEL_COMPILE_FLAGS})
 target_link_options(${TARGET_NAME} PRIVATE ${KERNEL_LINK_FLAGS})
 
+# KMDF version the binary binds to at load time. It must be <= the WdfLdr/KMDF
+# runtime installed on the target host; a higher value makes WdfVersionBind fail
+# with STATUS_INVALID_PARAMETER (error 87) and the driver never starts.
+set(KMDF_VERSION "1.31" CACHE STRING "KMDF version linked into the driver")
+
 # Link against kernel libraries
 set(WDK_LIB_PATH "C:/Program Files (x86)/Windows Kits/10/Lib/${WDK_VERSION}/km/x64")
-set(WDF_LIB_PATH "C:/Program Files (x86)/Windows Kits/10/Lib/wdf/kmdf/x64/1.35")
+set(WDF_LIB_PATH "C:/Program Files (x86)/Windows Kits/10/Lib/wdf/kmdf/x64/${KMDF_VERSION}")
 target_link_libraries(${TARGET_NAME} PRIVATE
     ${WDK_LIB_PATH}/ntoskrnl.lib
     ${WDK_LIB_PATH}/hal.lib
     ${WDK_LIB_PATH}/wdm.lib
     ${WDK_LIB_PATH}/wdmsec.lib
     ${WDK_LIB_PATH}/ntstrsafe.lib
+    ${WDK_LIB_PATH}/libcntpr.lib
+    ${WDK_LIB_PATH}/BufferOverflowK.lib
     ${WDF_LIB_PATH}/wdfdriverentry.lib
     ${WDF_LIB_PATH}/wdfldr.lib
 )
@@ -97,10 +112,9 @@ target_link_libraries(${TARGET_NAME} PRIVATE
 target_include_directories(${TARGET_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     "C:/Program Files (x86)/Windows Kits/10/Include/${WDK_VERSION}/km"
+    "C:/Program Files (x86)/Windows Kits/10/Include/${WDK_VERSION}/km/crt"
     "C:/Program Files (x86)/Windows Kits/10/Include/${WDK_VERSION}/shared"
-    "C:/Program Files (x86)/Windows Kits/10/Include/${WDK_VERSION}/um"
-    "C:/Program Files (x86)/Windows Kits/10/Include/${WDK_VERSION}/ucrt"
-    "C:/Program Files (x86)/Windows Kits/10/Include/wdf/kmdf/1.35"
+    "C:/Program Files (x86)/Windows Kits/10/Include/wdf/kmdf/${KMDF_VERSION}"
 )
 
 # Output as .sys file
