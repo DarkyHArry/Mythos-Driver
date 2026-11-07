@@ -2,9 +2,9 @@
 
 Projeto de driver de kernel para Windows (AntiCheatDriver) com ferramentas de assinatura e teste.
 
-## Aviso
+## Pesquisa academica
 
-Este projeto é destinado exclusivamente a pesquisa e estudo de segurança de kernel/drivers. Não deve ser usado para burlar proteções do sistema (HVCI/DSE), anti-cheats de terceiros ou executar código não autorizado em ring 0.
+Este repositorio serve a estudos de seguranca de kernel e drivers. O codigo pode ser usado para analisar comportamento de drivers sob HVCI/DSE, rings de execucao e virtualizacao (VT) em ambiente controlado e isolado, com foco defensivo (detecao, hardening e compatibilidade). Nao inclui nem deve ser usado para bypass de protecoes ou execucao de codigo nao autorizado.
 
 ## O que é
 
