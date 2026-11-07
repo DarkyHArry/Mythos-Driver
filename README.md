@@ -61,6 +61,22 @@ Use `DriverSigner` para assinar `.sys`/`.exe`/`.dll` com um certificado PFX:
 dotnet run --project DriverSigner -- --file AntiCheatDriver.sys --cert TestDriverCert.pfx --password <senha> --verify
 ```
 
+### Como a assinatura funciona
+
+1. Validacao do arquivo: `DriverSigner` verifica se o arquivo e um PE valido (cabecalho MZ/PE) e arquitetura x64.
+2. Carregamento do certificado: le o PFX com chave privada e valida periodo de validade.
+3. Assinatura: invoca `signtool.exe` com SHA256 (ou SHA1), carimbo de tempo (timestamp) e descricao.
+4. Saida: gera o arquivo assinado (`.signed.sys` por padrao ou caminho informado em `--output`).
+5. Verificacao: com `--verify`, executa `signtool verify /v /pa` para confirmar a assinatura.
+
+Opcoes principais:
+- `--testsign`: modo de test signing (para desenvolvimento, requer test signing habilitado no boot).
+- `--timestamp`: servidor de timestamp (padrao: http://timestamp.digicert.com).
+- `--sha256`: usa SHA256 (padrao true).
+- `--verbose`: saida detalhada.
+
+O `signtool` e localizado automaticamente nos caminhos do Windows SDK/Visual Studio.
+
 ## Teste
 
 1. Habilitar test signing: `bcdedit /set testsigning on` e reiniciar.
