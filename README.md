@@ -67,7 +67,17 @@ dotnet run --project DriverSigner -- --file AntiCheatDriver.sys --cert TestDrive
 2. Carregar o driver: `sc create AntiCheatDriver type= kernel binPath= <caminho>\AntiCheatDriver.sys` e `sc start AntiCheatDriver`.
 3. Executar `BasicTest` para validar IOCTLs (o teste reporta se o dispositivo nao estiver carregado).
 
-## Melhorias implementadas
+## Uso em jogos (anti-cheat)
+
+O driver identifica processos de jogo (lista em `AcIsGameProcess`, em `DriverUtils.c`) e monitora apenas esses processos para reduzir overhead. Para cada processo rastreado:
+
+- Carregamento de modulos e comparacao com lista de modulos suspeitos (`AcIsSuspiciousModule` em `ImageLoadCallbacks.c`).
+- Varredura de memoria (`AcScanProcessMemory`/`AcScanMemoryRegion` em `MemoryScan.c`) para detectar alteracoes.
+- Deteccao de hooks de API (`AcDetectApiHooks`) e injecao de codigo (`AcDetectCodeInjection`).
+- Deteccao de thread hijack (`AcDetectThreadHijack`).
+- Violacoes registradas com tipo, PID, endereco e descricao, expostas via `IOCTL_AC_GET_VIOLATIONS`.
+
+A configuracao (`AC_CONFIG`) permite ativar/desativar cada monitoramento e bloquear modulos suspeitos (`BlockSuspiciousModules`).
 
 - Build Debug/Release corrigido (conflito /O2 vs /RTC1).
 - Migracao de ExAllocatePoolWithTag para ExAllocatePool2.
