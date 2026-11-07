@@ -1,0 +1,2 @@
+$pwd = ConvertTo-SecureString -String 'TestPass123' -Force -AsPlainText
+Export-PfxCertificate -Cert 'Cert:\CurrentUser\My\F61A23C03A3F68145BC65F20DC5E042A1E66E2D4' -FilePath 'D:\Mythos\Driver\DriverSigner\TestDriverCert.pfx' -Password $pwd

@@ -1,0 +1,4 @@
+.agent_tasks/
+build/
+obj/
+bin/

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xm7psJp8WZo=",
+  "success": true,
+  "projectFilePath": "D:\\Mythos\\Driver\\DriverSigner\\DriverSigner.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\coron\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
+  ],
+  "logs": []
+}

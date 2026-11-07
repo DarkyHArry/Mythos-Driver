@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBBB32CB-A17E-32D5-AF14-48F60711DE13}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>AntiCheatDriver</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Mythos\Driver\AntiCheatDriver\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AntiCheatDriver.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AntiCheatDriver</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.sys</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Mythos\Driver\AntiCheatDriver\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AntiCheatDriver.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AntiCheatDriver</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.sys</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Mythos\Driver\AntiCheatDriver\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AntiCheatDriver.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AntiCheatDriver</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.sys</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Mythos\Driver\AntiCheatDriver\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AntiCheatDriver.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AntiCheatDriver</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.sys</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /RTC- /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR="Debug";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"Debug\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Anti-cheat driver built successfully</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "Build complete: D:/Mythos/Driver/AntiCheatDriver/build/Debug/AntiCheatDriver.sys"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <Driver>WDM</Driver>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/Debug/AntiCheatDriver.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Mythos/Driver/AntiCheatDriver/build/Debug/AntiCheatDriver.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR="Release";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"Release\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Anti-cheat driver built successfully</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "Build complete: D:/Mythos/Driver/AntiCheatDriver/build/Release/AntiCheatDriver.sys"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <Driver>WDM</Driver>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/Release/AntiCheatDriver.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Mythos/Driver/AntiCheatDriver/build/Release/AntiCheatDriver.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR="MinSizeRel";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"MinSizeRel\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Anti-cheat driver built successfully</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "Build complete: D:/Mythos/Driver/AntiCheatDriver/build/MinSizeRel/AntiCheatDriver.sys"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <Driver>WDM</Driver>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/MinSizeRel/AntiCheatDriver.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Mythos/Driver/AntiCheatDriver/build/MinSizeRel/AntiCheatDriver.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /kernel /RTC- /Zc:strictStrings /Zc:throwingNew /Zc:referenceBinding /Zc:__cplusplus /c</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR="RelWithDebInfo";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_AMD64_;NTDDI_VERSION=0x0A00000A;WINVER=0x0A00;_WIN32_WINNT=0x0A00;CMAKE_INTDIR=\"RelWithDebInfo\";AntiCheatDriver_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mythos\Driver\AntiCheatDriver\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Anti-cheat driver built successfully</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "Build complete: D:/Mythos/Driver/AntiCheatDriver/build/RelWithDebInfo/AntiCheatDriver.sys"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdm.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\wdmsec.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntstrsafe.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfdriverentry.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\wdfldr.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /SUBSYSTEM:NATIVE,6.01 /INTEGRITYCHECK /MERGE:.rdata=.text</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <Driver>WDM</Driver>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Mythos/Driver/AntiCheatDriver/build/RelWithDebInfo/AntiCheatDriver.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Mythos/Driver/AntiCheatDriver/build/RelWithDebInfo/AntiCheatDriver.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Mythos\Driver\AntiCheatDriver\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Mythos/Driver/AntiCheatDriver/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Mythos/Driver/AntiCheatDriver -BD:/Mythos/Driver/AntiCheatDriver/build --check-stamp-file D:/Mythos/Driver/AntiCheatDriver/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeRCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Mythos/Driver/AntiCheatDriver/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Mythos/Driver/AntiCheatDriver -BD:/Mythos/Driver/AntiCheatDriver/build --check-stamp-file D:/Mythos/Driver/AntiCheatDriver/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeRCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Mythos/Driver/AntiCheatDriver/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Mythos/Driver/AntiCheatDriver -BD:/Mythos/Driver/AntiCheatDriver/build --check-stamp-file D:/Mythos/Driver/AntiCheatDriver/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeRCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Mythos/Driver/AntiCheatDriver/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Mythos/Driver/AntiCheatDriver -BD:/Mythos/Driver/AntiCheatDriver/build --check-stamp-file D:/Mythos/Driver/AntiCheatDriver/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeRCCompiler.cmake;D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\4.5.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Mythos\Driver\AntiCheatDriver\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DriverEntry.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\ProcessCallbacks.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\ThreadCallbacks.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\ImageLoadCallbacks.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DeviceControl.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\MemoryScan.c" />
+    <ClCompile Include="D:\Mythos\Driver\AntiCheatDriver\src\DriverUtils.c" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\Mythos\Driver\AntiCheatDriver\build\ZERO_CHECK.vcxproj">
+      <Project>{7A878CB7-C147-36FA-A6ED-6FB83D454444}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1 @@
+Get-ChildItem Cert:\CurrentUser\My | Where-Object {$_.Subject -like '*TestDriver*'} | Select-Object Subject, Thumbprint, NotAfter, EnhancedKeyUsageList

@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build-driver:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S AntiCheatDriver -B build -A x64
+      - name: Build (Release)
+        run: cmake --build build --config Release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AntiCheatDriver
+          path: build/Release/AntiCheatDriver.sys
