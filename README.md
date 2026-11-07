@@ -2,6 +2,12 @@
 
 Projeto de driver de kernel para Windows (AntiCheatDriver) com ferramentas de assinatura e teste.
 
+## Detalhes tecnicos
+
+- Ring de execucao: o driver roda em kernel mode (ring 0) no Windows. User-mode (BasicTest/DriverSigner) roda em ring 3.
+- Assinatura: o DriverSigner pode assinar binarios PE legitimos (.sys/.exe/.dll) com certificado PFX, gerando assinatura Authenticode com timestamp. Uso previsto: assinar o proprio driver ou software legitimo para distribuicao.
+- Compatibilidade: para carregar em sistemas com HVCI/DSE ativos, o driver deve ser assinado com certificado valido e compativel com as politicas do Windows. Modo test signing apenas para desenvolvimento local.
+
 ## Pesquisa academica
 
 Este repositorio serve a estudos de seguranca de kernel e drivers. O codigo pode ser usado para analisar comportamento de drivers sob HVCI/DSE, rings de execucao e virtualizacao (VT) em ambiente controlado e isolado, com foco defensivo (detecao, hardening e compatibilidade). Nao inclui nem deve ser usado para bypass de protecoes ou execucao de codigo nao autorizado.
