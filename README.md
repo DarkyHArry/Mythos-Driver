@@ -2,6 +2,10 @@
 
 Projeto de driver de kernel para Windows (AntiCheatDriver) com ferramentas de assinatura e teste.
 
+## Aviso
+
+Este projeto é destinado exclusivamente a pesquisa e estudo de segurança de kernel/drivers. Não deve ser usado para burlar proteções do sistema (HVCI/DSE), anti-cheats de terceiros ou executar código não autorizado em ring 0.
+
 ## O que é
 
 - `AntiCheatDriver`: driver de kernel WDM/KMDF em C (x64) que monitora integridade de processos protegidos (anti-cheat).
